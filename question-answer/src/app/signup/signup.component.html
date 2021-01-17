@@ -1,0 +1,41 @@
+
+<div class="container">
+    <hr>
+    
+    <div class="row justify-content-sm-center" >
+      <aside class="col-sm-6 ">
+   
+    <div class="card text-white bg-primary ">
+    <article class="card-body">
+    <a href="/signin" class="float-left btn btn-warning">Giriş Yap</a>
+    <h4 class="card-title mb-5 mt-4 text-center">Kayıt ol</h4>
+       <form>
+        <div class="form-group">
+          <label>İsim</label>
+            <input required name="" class="form-control" placeholder="isim" type="text" #isim>
+        </div>
+        <div class="form-group">
+          <label>E posta</label>
+            <input  required name="" class="form-control" placeholder="e posta" type="email" #email>
+        </div> 
+        <div class="form-group">
+        
+          <label>Şifre</label>
+            <input required class="form-control" placeholder="şifre" type="password" #sifre>
+        </div> 
+        <div class="form-group"> 
+        <div class="checkbox">
+         
+        </div> 
+        </div> 
+        <div class="form-group">
+            <button (click) = "kayitol(email.value,sifre.value,isim.value)" type="button" class="btn btn-success btn-block"> Kayıt ol  </button>
+        </div>                                                         
+    </form>
+    </article>
+    </div>
+    
+      </aside> 
+    </div> 
+    
+    </div> 

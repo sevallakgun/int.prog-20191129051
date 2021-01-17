@@ -1,0 +1,96 @@
+<app-navbar></app-navbar>
+
+<h2 class="text-center">Soru Cevap Bölümleri</h2>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-6">
+
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Bölümler</th>
+           
+            <th class="text-center"  scope="col">İşlemler</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr *ngFor="let section of sections | async "> 
+            <td>{{section.sectionName}}</td>
+
+
+           
+            <td>
+              <div class="d-flex justify-content-center">
+              
+                <button (click) = "bolumeBasla(section)" data-toggle="modal" data-target="#exampleModal" type="submit" class="btn btn-info ml-3"  >Başla</button>
+
+
+              </div>
+
+            
+            </td>
+           
+      
+           
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Bölüm :  {{currenSection.sectionName}}</h5>
+         
+        </div>
+        <div class="modal-body">
+       
+          <h3>Soru :  {{currentQues.questionName}}?</h3>
+
+         
+
+          <div class="d-flex justify-content-between">
+            <div class=" d-flex justify-content-between span2">
+                <p><button  (click) = "saveAnswer('A',currentQues)" type="button" class="btn btn-outline-warning btn-block"  >A şıkkı :  {{currentQues.textA}}</button></p>
+            
+                    <p><button  (click) = "saveAnswer('B',currentQues)" type="button" class="btn btn-outline-warning btn-block"  > B şıkkı : {{currentQues.textB}}</button></p>
+        </div>
+        </div>
+
+
+         
+          <div class="d-flex justify-content-between">
+            <div class=" d-flex justify-content-between span2">
+                <p><button  (click) = "saveAnswer('C',currentQues)" type="button" class="btn btn-outline-warning btn-block" >C şıkkı : {{currentQues.textC}}</button></p>
+            
+                    <p><button  (click) = "saveAnswer('D',currentQues)" type="button" class="btn btn-outline-warning btn-block"  >D şıkkı : {{currentQues.textD}}</button></p>
+        </div>
+        </div>
+        
+          
+
+            
+
+        </div>
+        <div class="modal-footer">
+         
+            <div *ngIf="last">
+                <button (click) = "kaydet()" type="button" class="btn btn-primary" data-dismiss="modal" >Cevapları Kaydet</button>
+            </div>
+        
+    
+         
+        </div>
+      </div>
+    </div>
+  </div>
+

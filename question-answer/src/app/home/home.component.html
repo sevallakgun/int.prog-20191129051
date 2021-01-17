@@ -1,0 +1,42 @@
+
+<app-navbar></app-navbar>
+
+
+
+<div class="container-fluid">
+ 
+  
+  
+    <h2 class="text-center">Sonuçlar</h2>
+   
+
+      <div class="row ml-2">
+   
+      
+      <pre *ngFor="let cevap of cevaplar"> 
+        <div class="col-md-3">
+        <div [ngClass]="cevap.isSuccess  ? 'card text-white bg-primary' : 'card text-white bg-warning' "   style="width: 18rem;" >
+          <div class="card-header">{{cevap.section.sectionName}}</div>
+          <div class="card-body">
+            <p class="card-text">Doğru Cevap Sayısı : {{cevap.correctCount}}</p>
+            <p class="card-text">Yanlış Cevap Sayısı : {{cevap.wrongCount}}</p>
+            <p class="card-text">Başarı Oranı : {{cevap.successRate}} %</p>
+
+          </div>
+        </div>
+
+      </div>
+      </pre>
+   
+ 
+</div>
+  
+   
+   
+    
+  
+  </div>
+
+
+
+  
